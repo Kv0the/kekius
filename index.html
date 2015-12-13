@@ -1,31 +1,35 @@
 <!doctype html>
 <html lang=en>
-<head>
-	<meta charset="utf-8">
-	<title>kekius.me</title>
-	<style>
-		video#bgvid {
-			position: fixed;
-			top: 50%;
-			left: 50%;
-			min-width: 100%;
-			min-height: 100%;
-			width: auto;
-			height: auto;
-			z-index: -100;
-			-webkit-transform: translateX(-50%) translateY(-50%);
-			transform: translateX(-50%) translateY(-50%);
-			overflow: hidden;
-		}
-	</style>
-</head>
+  <head>
+  	<meta charset="utf-8">
+  	<title>kekius.me</title>
+  	<style>
+  		video#bgvid {
+  			position: fixed;
+  			top: 50%;
+  			left: 50%;
+  			min-width: 100%;
+  			min-height: 100%;
+  			width: auto;
+  			height: auto;
+  			z-index: -100;
+  			-webkit-transform: translateX(-50%) translateY(-50%);
+  			transform: translateX(-50%) translateY(-50%);
+  			overflow: hidden;
+  		}
+  	</style>
 
-<body bgcolor="#000000" text="white">
+  <script>
+    btn.on("click", function(){
+      var src = "/webms/1449152278962.webm";
+      $("#bgvid").find("#webm_source").attr("src", src)
+    })
+  </script>
+  </head>
 
-	<a href="http://kekius.me">
-		<video autoplay loop id="bgvid">
-			<source src="/webms/1449151845845.webm" type="video/webm">
-		</video>
-	</a>
-</body>
+  <body bgcolor="#000000" text="white">
+  	<video autoplay loop id="bgvid">
+  		<source src="/webms/1449151845845.webm" type="video/webm" id="webm_source">
+  	</video>
+  </body>
 </html>
