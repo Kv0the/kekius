@@ -18,20 +18,21 @@
   			overflow: hidden;
   		}
   	</style>
+  </head>
 
-  <script>
+  <body bgcolor="#000000" text="white">
+
+    <script>
     $('.video').click(function(){
       this.paused?this.play():this.pause();
     });
     
-    $("#bgvid").click(function(){
-      var src = "/webms/1449152278962.webm";
-      $("#bgvid").find("#webm_source").attr("src", src);
-    });
+    // $("#bgvid").click(function(){
+    //   var src = "/webms/1449152278962.webm";
+    //   $("#bgvid").find("#webm_source").attr("src", src);
+    // });
   </script>
-  </head>
 
-  <body bgcolor="#000000" text="white">
   	<video autoplay loop id="bgvid">
   		<source src="/webms/1449151845845.webm" type="video/webm" id="webm_source">
   	</video>
