@@ -20,13 +20,41 @@
   	</style>
 
     <script>
+
+      var howMany = 10;
+      var videos = new Array(howMany+1);
+
+      videos[0]="1449106913242.webm";
+      videos[1]="1449151845845.webm";
+      videos[2]="1449152278962.webm";
+      videos[3]="1449319099520.webm";
+      videos[4]="1449544294143.webm";
+      videos[5]="1449118625553.webm";
+      videos[6]="1449151920657.webm";
+      videos[7]="1449211640013.webm";
+      videos[8]="1449398362573.webm";
+      videos[9]="1449545813472.webm";
+
+      function getRandomVideo() {
+        var randscript = -1;
+        while (randscript < 0 || randscript > howMany || isNaN(randscript)){
+          randscript = parseInt(Math.random()*(howMany+1));
+        }
+        return videos[randscript];
+      }
+
       function changeVideo() {
+
         var player = document.getElementById('bgvid');
         var webm = document.getElementById('webm_source');
+        var new_src = getRandomVideo();
+        while (new_src == webm.getAttribute('src')) {
+          new_src = getRandomVideo();
+        }
 
         player.pause();
 
-        webm.setAttribute('src', "/webms/1449545813472.webm");
+        webm.setAttribute('src', "/webms/"+new_src);
 
         player.load();
         player.play();
