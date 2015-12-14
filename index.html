@@ -19,26 +19,27 @@
   		}
   	</style>
 
+    <script>
+
+      var player = document.getElementById('bgvid');
+      var webm = document.getElementById('webm_source');
+
+      player.addEventListener('click',function(){
+          player.pause();
+
+        $(webm).attr('src', "/webms/1449152278962.webm");
+
+        player.load();
+        player.play();
+      },false);
+           
+    </script>
+
   </head>
 
   <body bgcolor="#000000" text="white">
   	<video autoplay loop id="bgvid">
   		<source src="/webms/1449151845845.webm" type="video/webm" id="webm_source">
   	</video>
-
-    <script>
-      var player = document.getElementById('bgvid');
-
-      var webm = document.getElementById('webm_source');
-
-      player.click(function(){
-        player.pause();
-
-        $(webm).attr('src', "/webms/1449152278962.webm");
-
-        player.load();
-        player.play();
-      });      
-    </script>
   </body>
 </html>
