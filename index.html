@@ -18,6 +18,7 @@
   			overflow: hidden;
   		}
   	</style>
+
   </head>
 
   <body bgcolor="#000000" text="white">
@@ -30,12 +31,14 @@
 
       var webm = document.getElementById('webm_source');
 
-      player.pause();
+      player.click(function(){
+        player.pause();
 
-      $(webm).attr('src', "/webms/1449152278962.webm");
+        $(webm).attr('src', "/webms/1449152278962.webm");
 
-      player.load();
-      player.play();
+        player.load();
+        player.play();
+      });      
     </script>
   </body>
 </html>
