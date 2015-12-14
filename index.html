@@ -23,10 +23,10 @@
       function changeVideo() {
         var player = document.getElementById('bgvid');
         var webm = document.getElementById('webm_source');
-        
+
         player.pause();
 
-        $(webm).attr('src', "/webms/1449545813472.webm");
+        webm.setAttribute('src', "/webms/1449545813472.webm");
 
         player.load();
         player.play();
