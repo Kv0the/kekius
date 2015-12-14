@@ -47,8 +47,9 @@
 
         var player = document.getElementById('bgvid');
         var webm = document.getElementById('webm_source');
+        var old_src = webm.getAttribute('src');
         var new_src = getRandomVideo();
-        while (new_src == webm.getAttribute('src')) {
+        while (new_src == old_src) {
           new_src = getRandomVideo();
         }
 
