@@ -3,6 +3,9 @@
   <head>
   	<meta charset="utf-8">
   	<title>kekius.me</title>
+
+  	<script src="main.js" charset="utf-8" type="text/javascript"></script>
+
   	<style>
   		video#bgvid {
   			position: fixed;
@@ -18,56 +21,11 @@
   			overflow: hidden;
   		}
   	</style>
-
-    <script>
-
-      var howMany = 11;
-      var videos = new Array(howMany+1);
-
-      videos[0]="/webms/1449106913242.webm";
-      videos[1]="/webms/1449151845845.webm";
-      videos[2]="/webms/1449152278962.webm";
-      videos[3]="/webms/1449319099520.webm";
-      videos[4]="/webms/1449544294143.webm";
-      videos[5]="/webms/1449118625553.webm";
-      videos[6]="/webms/1449151920657.webm";
-      videos[7]="/webms/1449211640013.webm";
-      videos[8]="/webms/1449398362573.webm";
-      videos[9]="/webms/1449545813472.webm";
-      videos[10]="/webms/1449106913232.webm";
-
-      function getRandomVideo() {
-        var randscript = -1;
-        while (randscript < 0 || randscript > howMany || isNaN(randscript)){
-          randscript = parseInt(Math.random()*(howMany+1));
-        }
-        return videos[randscript];
-      }
-
-      function changeVideo() {
-
-        var player = document.getElementById('bgvid');
-        var webm = document.getElementById('webm_source');
-        var old_src = webm.getAttribute('src');
-        var new_src = getRandomVideo();
-        while (new_src == old_src) {
-          new_src = getRandomVideo();
-        }
-
-        player.pause();
-
-        webm.setAttribute('src', new_src);
-
-        player.load();
-        player.play();
-      }     
-    </script>
-
   </head>
 
   <body bgcolor="#000000" text="white">
   	<video autoplay loop id="bgvid" onclick="changeVideo()">
-  		<source src="/webms/1449151845845.webm" type="video/webm" id="webm_source">
+  		<source src="" type="video/webm" id="webm_source">
   	</video>
   </body>
 </html>
