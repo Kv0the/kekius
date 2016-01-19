@@ -1,10 +1,24 @@
 var howMany = 1;
 var videos = new Array();
 
-var fs = require('fs');
-fs.readFile('db.txt', function(err, data) {
-    if(err) throw err;
-    videos = data.toString().split("\n");
+var load = function (file, cb){
+    var lines = [];
+    new BufferedReader (file, { encoding: "utf8" })
+        .on ("error", function (error){
+            cb (error, null);
+        })
+        .on ("line", function (line){
+            videos.push (line);
+        })
+        .on ("end", function (){
+            cb (null, lines);
+        })
+        .read ();
+};
+
+load ("db.txt", function (error, lines){
+    if (error) return console.log (error);
+    console.log (videos);
 });
 
 function getRandomVideo() {
