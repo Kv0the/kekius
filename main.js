@@ -1,25 +1,12 @@
 var howMany = 1;
-var videos = new Array();
+//var videos = new Array();
 
-var load = function (file, cb){
-    var lines = [];
-    new BufferedReader (file, { encoding: "utf8" })
-        .on ("error", function (error){
-            cb (error, null);
-        })
-        .on ("line", function (line){
-            videos.push (line);
-        })
-        .on ("end", function (){
-            cb (null, lines);
-        })
-        .read ();
-};
+var xhr = new XMLHttpRequest();
 
-load ("db.txt", function (error, lines){
-    if (error) return console.log (error);
-    console.log (videos);
-});
+xhr.open('GET', 'db.txt', false);
+xhr.send(null);
+
+var videos = xhr.responseText.split('\n');
 
 function getRandomVideo() {
 	var randscript = -1;
