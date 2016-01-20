@@ -24,10 +24,9 @@ function setVideo() {
 	webm.setAttribute('src', videos[it]);
 
 	player.load();
+	player.play();
 
 	if (player.videoHeight > player.videoWidth) player.width = player.videoWidth;
-	
-	player.play();
 }
 
 function changeVideo() {
@@ -42,10 +41,9 @@ function changeVideo() {
 	webm.setAttribute('src', videos[it]);
 
 	player.load();
+	player.play();
 
 	if (player.videoHeight > player.videoWidth) player.width = player.videoWidth;
-
-	player.play();
 }
 
 function volume_up() {
