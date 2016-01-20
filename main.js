@@ -5,6 +5,7 @@ xhr.send(null);
 
 var videos = xhr.responseText.split('\n');
 var howMany = videos.length;
+console.log(howMany);
 
 function getRandomVideo() {
 	var randscript = -1;
