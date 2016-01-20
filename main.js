@@ -33,6 +33,7 @@ function changeVideo() {
 
 window.onload=function() {
 	changeVideo();
+	JSFX_StartEffects();
 
 	//document.getElementById('bgvid').addEventListener('ended',changeVideo,false);
 };
