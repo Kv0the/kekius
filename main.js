@@ -5,27 +5,38 @@ xhr.send(null);
 
 var videos = xhr.responseText.split('\n');
 var howMany = videos.length;
+var it;
 
 function getRandomVideo() {
 	var randscript = -1;
 	while (randscript < 0 || randscript > howMany-1 || isNaN(randscript)){
 	  randscript = parseInt(Math.random()*(howMany+1));
 	}
-	return videos[randscript];
+	return randscript;
+}
+
+function setVideo() {
+	var player = document.getElementById('bgvid');
+	var webm = document.getElementById('webm_source');
+	it = getRandomVideo();
+	player.pause();
+
+	webm.setAttribute('src', videos[it]);
+
+	player.load();
+	player.play();
 }
 
 function changeVideo() {
 	var player = document.getElementById('bgvid');
 	var webm = document.getElementById('webm_source');
-	var old_src = webm.getAttribute('src');
-	var new_src = getRandomVideo();
-	while (new_src == old_src) {
-	  new_src = getRandomVideo();
-	}
+
+	it = it + 1;
+	if (it == howMany) it = 0;
 
 	player.pause();
 
-	webm.setAttribute('src', new_src);
+	webm.setAttribute('src', videos[it]);
 
 	player.load();
 	player.play();
@@ -44,7 +55,7 @@ function volume_down() {
 }
 
 window.onload=function() {
-	changeVideo();
+	setVideo();
 	JSFX_StartEffects();
 	var player = document.getElementById('bgvid');
 	player.volume = 0.7;
