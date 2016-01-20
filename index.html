@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang=en>
+  <link href='http://fonts.googleapis.com/css?family=Ranga' rel='stylesheet' type='text/css'>
   <head>
   	<meta charset="utf-8">
   	<title>kekius.me</title>
@@ -19,13 +20,42 @@
   			-webkit-transform: translateX(-50%) translateY(-50%);
   			transform: translateX(-50%) translateY(-50%);
   			overflow: hidden;
+
+
+  			h1 {
+				position: fixed;
+				font-family: 'Ranga', Normal;
+				font-size: 80pt;
+				z-index: 100;
+				bottom: -90px;
+				right: 10px;
+				overflow: hidden;
+
+			}
+
+			h2 {
+				position: fixed;
+				text-decoration: none;
+			    font-family: 'Ranga', Normal;
+				z-index: 100;
+				bottom: 0px;
+				right: 0px;
+				overflow: hidden;
+			}
   		}
   	</style>
   </head>
 
-  <body bgcolor="#000000" text="white">
+  <body bgcolor="#000000" text="white" onLoad="JSFX_StartEffects()">
   	<video autoplay loop id="bgvid" onclick="changeVideo()">
   		<source type="video/webm" id="webm_source">
   	</video>
+
+  	<center>
+  		<h1>
+  			<span id="h2">Click to change!</span>
+  		</h1>
+  	</center>
+	</span></center>
   </body>
 </html>
