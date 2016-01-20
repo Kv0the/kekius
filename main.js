@@ -72,7 +72,6 @@ function fadeSpan() {
 
 function fadeAll() {
 	for(var i=0 ; i<arguments.length ; i++)
-		console.log("wi");
 		faderObj[i] = document.getElementById(arguments[i]);
 
 	fadeSpan();
