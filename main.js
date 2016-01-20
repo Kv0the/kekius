@@ -5,11 +5,10 @@ xhr.send(null);
 
 var videos = xhr.responseText.split('\n');
 var howMany = videos.length;
-console.log(videos);
 
 function getRandomVideo() {
 	var randscript = -1;
-	while (randscript < 0 || randscript > howMany || isNaN(randscript)){
+	while (randscript < 0 || randscript > howMany-1 || isNaN(randscript)){
 	  randscript = parseInt(Math.random()*(howMany+1));
 	}
 	return videos[randscript];
