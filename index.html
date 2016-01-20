@@ -44,6 +44,15 @@
 			left: 10px;
 			overflow: hidden;
 		}
+
+		.noselect {
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
   	</style>
   </head>
 
@@ -52,14 +61,14 @@
   		<source type="video/webm" id="webm_source">
   	</video>
 
-  	<h2>
+  	<h2 class="noselect">
   		<span id="h2">
   			Volume:
-	  		<a onclick="volume_up()">+</button>&nbsp;
-	   		<a onclick="volume_down()">-</button>
+	  		<a onclick="volume_up()">+</a>&nbsp;
+	   		<a onclick="volume_down()">-</a>
    		</span>
   	</h2>
-	<h1>
+	<h1 class="noselect">
 		<span id="h1">Click to change!&nbsp;</span>
 	</h1>
   </body>
