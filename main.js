@@ -46,8 +46,8 @@ function volume_down() {
 window.onload=function() {
 	changeVideo();
 	JSFX_StartEffects();
-
-	//document.getElementById('bgvid').addEventListener('ended',changeVideo,false);
+	var player = document.getElementById('bgvid');
+	player.volume = 0.7;
 };
 
 var colors = new Array("339966", "FF0000", "00FF00", "0000FF", "FFFF00", "FF00FF", "00FFFF");
