@@ -26,7 +26,16 @@ function setVideo() {
 	player.load();
 	player.play();
 
-	if (player.videoHeight > player.videoWidth) player.width = player.videoWidth;
+	var videoActualWidth = video.getBoundingClientRect().width;
+	var videoActualHeight = video.getBoundingClientRect().height;
+
+	var aspect = videoActualWidth / videoActualHeight;
+
+	if (videoActualWidth / videoActualHeight > aspect) {
+	    video.setAttribute("style", "height: 100%");
+	} else {
+	    video.setAttribute("style", "width: 100%");
+	}
 }
 
 function changeVideo() {
