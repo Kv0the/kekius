@@ -1,12 +1,10 @@
-var howMany = 1;
-//var videos = new Array();
-
 var xhr = new XMLHttpRequest();
 
 xhr.open('GET', 'db.txt', false);
 xhr.send(null);
 
 var videos = xhr.responseText.split('\n');
+var howMany = videos.length;
 
 function getRandomVideo() {
 	var randscript = -1;
@@ -34,5 +32,7 @@ function changeVideo() {
 }
 
 window.onload=function(){
-	changeVideo();    
+	changeVideo();
+
+	document.getElementById('bgvid').addEventListener('ended',changeVideo,false);
 };
