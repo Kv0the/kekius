@@ -17,7 +17,7 @@
   			width: auto;
   			height: auto;
   			z-index: -100;
-  			-webkit-transform: translateX(-50%) translateY(-50%);
+  			-webkit-transform: translateX(-50%)  (-50%);
   			transform: translateX(-50%) translateY(-50%);
   			overflow: hidden;
   		}
@@ -32,7 +32,17 @@
 			bottom: -90px;
 			right: 10px;
 			overflow: hidden;
+		}
 
+		h2 {
+			position: fixed;
+			text-decoration: none;
+			font-family: 'Ranga', Normal;
+			font-size: 50pt;
+			z-index: 100;
+			bottom: -60px;
+			left: 10px;
+			overflow: hidden;
 		}
   	</style>
   </head>
@@ -42,6 +52,13 @@
   		<source type="video/webm" id="webm_source">
   	</video>
 
+  	<h2>
+  		<span id="h2">
+  			Volume:
+	  		<a onclick="volume_up()">+</button>&nbsp;
+	   		<a onclick="volume_down()">-</button>
+   		</span>
+  	</h2>
 	<h1>
 		<span id="h1">Click to change!&nbsp;</span>
 	</h1>

@@ -31,6 +31,18 @@ function changeVideo() {
 	player.play();
 }
 
+function volume_up() {
+	var player = document.getElementById('bgvid');
+	var volume = player.volume;
+	if (volume + 0.1 < 1.0) player.volume = volume + 0.1;
+}
+
+function volume_down() {
+	var player = document.getElementById('bgvid');
+	var volume = player.volume;
+	if (volume - 0.1 > 0) player.volume = volume - 0.1;
+}
+
 window.onload=function() {
 	changeVideo();
 	JSFX_StartEffects();
@@ -78,5 +90,5 @@ function fadeAll() {
 }
 
 function JSFX_StartEffects() {
-	fadeAll("h1");
+	fadeAll("h1","h2");
 }
