@@ -25,17 +25,6 @@ function setVideo() {
 
 	player.load();
 	player.play();
-
-	var videoActualWidth = player.getBoundingClientRect().width;
-	var videoActualHeight = player.getBoundingClientRect().height;
-
-	var aspect = videoActualWidth / videoActualHeight;
-
-	if (videoActualWidth / videoActualHeight > aspect) {
-	    player.setAttribute("style", "height: 100%");
-	} else {
-	    player.setAttribute("style", "width: 100%");
-	}
 }
 
 function changeVideo() {
@@ -51,17 +40,6 @@ function changeVideo() {
 
 	player.load();
 	player.play();
-
-	var videoActualWidth = player.getBoundingClientRect().width;
-	var videoActualHeight = player.getBoundingClientRect().height;
-
-	var aspect = videoActualWidth / videoActualHeight;
-
-	if (videoActualWidth / videoActualHeight > aspect) {
-	    player.setAttribute("style", "height: 100%");
-	} else {
-	    player.setAttribute("style", "width: 100%");
-	}
 }
 
 function volume_up() {
