@@ -24,6 +24,9 @@ function setVideo() {
 	webm.setAttribute('src', videos[it]);
 
 	player.load();
+
+	if (player.videoHeight > player.videoWidth) player.width = player.videoWidth;
+	
 	player.play();
 }
 
@@ -39,6 +42,9 @@ function changeVideo() {
 	webm.setAttribute('src', videos[it]);
 
 	player.load();
+
+	if (player.videoHeight > player.videoWidth) player.width = player.videoWidth;
+
 	player.play();
 }
 
